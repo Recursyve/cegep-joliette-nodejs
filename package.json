@@ -1,0 +1,10 @@
+{
+  "name": "cegep-node-2020",
+  "version": "1.0.0",
+  "main": "fizzbuzz.js",
+  "author": "Brandon Roberge, Julien Dufresne",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

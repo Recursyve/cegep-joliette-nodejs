@@ -1,0 +1,58 @@
+@import "~@recursyve/nice-ui-kit/scss/nice";
+
+toolbar {
+    position: relative;
+    display: flex;
+    flex: 0 0 auto;
+    z-index: 4;
+
+    &.below {
+        z-index: 2;
+    }
+
+    .mat-toolbar {
+        position: relative;
+        background: inherit !important;
+        color: inherit !important;
+
+        @include mat-elevation(3, $mat-elevation-color, 0.30);
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+
+        .logo-icon {
+            width: auto;
+            padding: 5px 12px;
+            height: 60px;
+        }
+    }
+
+
+    .user-button,
+    .language-button,
+    .chat-panel-toggle-button,
+    .quick-panel-toggle-button {
+        min-width: 64px;
+        height: 64px;
+
+        @include media-breakpoint("xs") {
+            height: 56px;
+        }
+    }
+
+    .navbar-toggle-button {
+        min-width: 56px;
+        height: 56px;
+    }
+
+    .toolbar-separator {
+        height: 64px;
+        width: 1px;
+
+        @include media-breakpoint("xs") {
+            height: 56px;
+        }
+    }
+}

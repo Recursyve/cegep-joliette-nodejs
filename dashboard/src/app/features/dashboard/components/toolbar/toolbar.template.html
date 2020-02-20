@@ -1,0 +1,34 @@
+<mat-toolbar class="p-0">
+    <div fxFlex fxFill fxLayout="row" fxLayoutAlign="start center">
+        <div fxFlex="1 0 auto" fxLayout="row" fxLayoutAlign="start center">
+            <button mat-icon-button class="navbar-toggle-button" (click)="toggleSidebarOpen('navbar')" fxHide.gt-md>
+                <mat-icon class="secondary-text">menu</mat-icon>
+            </button>
+
+            <div class="toolbar-separator" fxHide.gt-md></div>
+        </div>
+
+        <div fxFlex="0 1 auto" fxLayout="row" fxLayoutAlign="start center">
+            <div class="toolbar-separator"></div>
+
+            <div class="toolbar-separator"></div>
+            <button mat-button [matMenuTriggerFor]="userMenu" class="user-button">
+                <div fxLayout="row" fxLayoutAlign="center center">
+                    <img ngxGravatar [email]="currentUser.email" class="avatar mr-0 mr-sm-16"/>
+                    <span class="username mr-12" fxHide fxShow.gt-sm>
+                        {{ currentUser.email }}
+                    </span>
+                    <mat-icon class="s-16" fxHide.xs>keyboard_arrow_down</mat-icon>
+                </div>
+            </button>
+
+            <mat-menu #userMenu="matMenu" [overlapTrigger]="false">
+
+                <button mat-menu-item (click)="logout()">
+                    <mat-icon>exit_to_app</mat-icon>
+                    <span>Logout</span>
+                </button>
+            </mat-menu>
+        </div>
+    </div>
+</mat-toolbar>

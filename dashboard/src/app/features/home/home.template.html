@@ -1,0 +1,37 @@
+<div class="page-layout fullwidth simple" [niceLoadingOverlay]="loading">
+    <div class="center">
+        <div class="content">
+            <div fxLayoutAlign="space-between center" class="my-16">
+                <h1>Bars & Restaurants</h1>
+                <button mat-fab (click)="clickCreate()">
+                    <mat-icon>
+                        add
+                    </mat-icon>
+                </button>
+            </div>
+            <div fxLayout="row wrap" fxLayoutGap="15px grid" *ngIf="!loading">
+                <div fxFlex.lt-xl="50" fxFlex.xl="33" *ngFor="let location of locations">
+                    <mat-card>
+                        <mat-card-header>
+                            <mat-card-title>
+                                {{ location?.name }}
+                            </mat-card-title>
+                            <mat-card-subtitle>
+                                {{ location?.address }}
+                            </mat-card-subtitle>
+                        </mat-card-header>
+                        <img mat-card-image [src]="location?.pictureUrl">
+                        <mat-card-actions align="end">
+                            <button mat-button color="primary" (click)="clickEdit(location)">
+                                MODIFIER
+                            </button>
+                            <button mat-button color="warn" (click)="clickDelete(location)">
+                                SUPPRIMER
+                            </button>
+                        </mat-card-actions>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
